@@ -49,7 +49,7 @@
       <p *ngIf="searchText?.length > 0" class="mg-0 search-results">Search results for</p>
     </div>
   <div class="d-flex mg-rl" fxFlex="100">
-    <p class="mg-tp-10 search-value" *ngIf="searchText?.length > 0">{{searchText}} ({{searchText?.length}})</p>
+    <p class="mg-tp-10 search-value" *ngIf="searchText?.length > 0">{{searchText}}</p>
   </div>
   <div *ngFor="let article of articles | filter:searchText | paginate: { itemsPerPage: 20, currentPage: p }" class="d-flex mg-rl" fxFlex="24" fxFlex.xs="46.7">    
     <a class="decoration-none" href="#">
