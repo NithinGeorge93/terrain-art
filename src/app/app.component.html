@@ -45,41 +45,28 @@
   </div>
 </div>
 <div class="container reverse bottom" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="10px">
-
-  <ng-container *ngFor="let article of articles | filter:searchText as result let i = index">
-    <div *ngIf="i == 0" class="d-flex mg-rl" fxFlex="100">
+  <div class="d-flex mg-rl" fxFlex="100">
       <p *ngIf="searchText?.length > 0" class="mg-0 search-results">Search results for</p>
     </div>
-    <div *ngIf="i == 0" class="d-flex mg-rl" fxFlex="100">
-      <p class="mg-tp-10 search-value" *ngIf="searchText?.length > 0">{{searchText}} ({{result?.length}})</p>
-    </div>
-    <div class="d-flex mg-rl" fxFlex="24" fxFlex.xs="46.7">
-      <a class="decoration-none" href="#">
-        <div class="mg-bt-15" fxLayout="column" fxLayoutAlign="center">
-          <div class="parent" fxFlex>
-            <img class="child align-items-middle img-responsive product" src={{article.image}} alt={{article.place}} width="290px" height="200px">
-            <p>{{article.name}}</p>
-          </div>
-          <div class="mg-tp-10" fxFlex>
-            <img class="align-items-middle" src={{article.logo}} alt={{article.name}} width="100px" height="20px">
-            <p class="font-18">{{article.name}}</p>
-            <p class="font-16">{{article.place}}</p>
-          </div>
+  <div class="d-flex mg-rl" fxFlex="100">
+    <p class="mg-tp-10 search-value" *ngIf="searchText?.length > 0">{{searchText}} ({{searchText?.length}})</p>
+  </div>
+  <div *ngFor="let article of articles | filter:searchText | paginate: { itemsPerPage: 20, currentPage: p }" class="d-flex mg-rl" fxFlex="24" fxFlex.xs="46.7">    
+    <a class="decoration-none" href="#">
+      <div class="mg-bt-15" fxLayout="column" fxLayoutAlign="center">
+        <div class="parent" fxFlex>
+          <img class="child align-items-middle img-responsive product" src={{article.image}} alt={{article.place}} width="290px" height="200px">
+          <p>{{article.name}}</p>
         </div>
-      </a>
-    </div>
-  </ng-container>
-
+        <div class="mg-tp-10" fxFlex>
+          <img class="align-items-middle" src={{article.logo}} alt={{article.name}} width="100px" height="20px">
+          <p class="font-18">{{article.name}}</p>
+          <p class="font-16">{{article.place}}</p>
+        </div>
+      </div>
+    </a>
+  </div>
 </div>
 <div class="paginate-content mg-bt-15">
-  <button class="image-wrapper" disabled="">
-    <img src="assets/back-chevron@3x.png" alt="">
-  </button>
-  <button class="current">1</button>
-  <button class="nextPrev"> 2 </button>
-  <button class="nextPrev"> 3 </button>
-  <button class="nextPrev noHover"> ... </button>
-  <button class="image-wrapper">
-    <img src="assets/front-chevron@3x.png" alt="">
-  </button>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>

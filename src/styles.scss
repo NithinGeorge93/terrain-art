@@ -1,3 +1,44 @@
 body {
 	margin: 0px;
 }
+
+.ngx-pagination {
+  text-align: center;
+
+  li {
+  	border-radius: 50%;
+
+  	&::hover {
+    	background: #ededed;
+    }
+  }
+  
+  .current {
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #004ddd;
+    padding: .4vw .6vw;
+    margin-right: .625vw;
+    border-radius: 50%;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 12px;
+    height: 17px;
+    font-size: 16px;
+    outline: none;
+    font-weight: 500;
+
+    &:hover {
+    	background: #ededed;
+    }
+
+    @media only screen and (max-width: 768px) { 
+      padding: .4vw .6vw;
+      margin-right: 3.62vw;
+      width: 7.97vw;
+      height: 7.97vw;
+      font-size: 4.35vw;
+    }
+  }
+}

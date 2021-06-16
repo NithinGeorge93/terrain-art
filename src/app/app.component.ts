@@ -7,8 +7,10 @@ import { ApiService } from './api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  searchText: string;
+  searchText;
   articles;
+
+  p: number = 1;
 
   constructor(private apiService: ApiService) { }
   ngOnInit() {
@@ -16,5 +18,4 @@ export class AppComponent {
       this.articles = data;
     });
   }
-  
 }
