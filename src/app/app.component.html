@@ -1,6 +1,6 @@
 <div class="container header-box" fxLayout="row" fxLayoutAlign="center" fxLayoutGap.xs="0">
-  <div class="h-100 d-flex" fxFlex.xs="100" fxFlex="20%">
-    <img class="logo pd align-items-middle" src="assets/logo.png" alt="Logo">
+  <div class="h-100 d-flex" fxFlex.xs="100" fxFlex.sm="40" fxFlex="20%">
+    <img class="logo align-items-middle" src="assets/logo.png" alt="Logo">
   </div>
   <div class="d-flex" fxFlex="100px" fxFlex fxHide.xs>
     <a class="pd" routerlink="/learn" routerlinkactive="active" href="/learn"> Learn </a>
@@ -11,7 +11,7 @@
 </div>
 <div class="container" fxLayout="column" fxLayout.xs="row" fxLayoutAlign="center" fxLayoutGap="10px" fxLayoutGap.xs="0">
   <div class="margin-tb d-flex align-items-center align-items-middle" fxFlex="15%" fxFlex.xs="100">
-    <a class="pd">
+    <a class="home-pd">
       <img class="align-items-center align-items-middle mg-rt-15" src="assets/back-chevron.png" alt="Logo" width="30px" height="30px">
     </a>
     <div style="display: inline-block;">
@@ -27,7 +27,7 @@
   </div>
 </div>
 <div class="container search-box" fxLayout xLayout.xs="row" fxLayoutAlign="center" fxLayoutGap.xs="0">
-  <div class="h-100 pd-20 reverse d-flex align-items-center align-items-middle" fxFlex.xs="100" fxFlex="80">
+  <div class="h-100 pd-20 reverse d-flex align-items-center align-items-middle" fxFlex.xs="100" fxFlex.sm="60" fxFlex="80">
     <a class="pd-1" routerlink="/learn" routerlinkactive="active" href="/learn"> U-Z </a>
     <a class="pd-1" routerlink="/archive" routerlinkactive="active" href="/archive"> P-T </a>
     <a class="pd-1" routerlink="/explore" routerlinkactive="active" href="/explore"> K-O </a>
@@ -36,11 +36,11 @@
     <p class="pd-1">View All</p>
   </div>
   <div class="d-flex  form-group" fxFlex fxHide.xs>
-     <input placeholder="Search by artist or artwork" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" class="ng-pristine ng-valid ng-touched form-control">
+     <input placeholder="Search by artist or artwork" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" class="ng-pristine ng-valid ng-touched form-control mg-15">
   </div>
 </div>
 <div class="container search-box" fxLayout fxLayoutAlign="center" fxLayoutGap.xs="0">
-  <div class="d-flex form-group" fxFlex="100" fxHide.lg>
+  <div class="d-flex form-group" fxFlex="100" fxHide.sm fxHide.md fxHide.lg>
     <input placeholder="Search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" class="ng-pristine ng-valid ng-touched form-control">
   </div>
 </div>
@@ -51,7 +51,7 @@
   <div class="d-flex mg-rl" fxFlex="100">
     <p class="mg-tp-10 search-value" *ngIf="searchText?.length > 0">{{searchText}}</p>
   </div>
-  <div *ngFor="let article of articles | filter:searchText | paginate: { itemsPerPage: 20, currentPage: p }" class="d-flex mg-rl" fxFlex="24" fxFlex.xs="46.7">    
+  <div *ngFor="let article of articles | filter:searchText | paginate: { itemsPerPage: 20, currentPage: p }" class="d-flex mg-rl" fxFlex="24" fxFlex.md="23.5" fxFlex.sm="46.7" fxFlex.xs="46.7">    
     <a class="decoration-none" href="#">
       <div class="mg-bt-15" fxLayout="column" fxLayoutAlign="center">
         <div class="parent" fxFlex>
@@ -59,7 +59,7 @@
           <p>{{article.name}}</p>
         </div>
         <div class="mg-tp-10" fxFlex>
-          <img class="align-items-middle" src={{article.logo}} alt={{article.name}} width="100px" height="20px">
+          <img class="align-items-middle" src={{article.logo}} alt={{article.name}} height="40">
           <p class="font-18">{{article.name}}</p>
           <p class="font-16">{{article.place}}</p>
         </div>

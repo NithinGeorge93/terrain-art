@@ -7,7 +7,7 @@ import { ApiService } from './api.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  searchText;
+  searchText: string;
   articles;
 
   p: number = 1;

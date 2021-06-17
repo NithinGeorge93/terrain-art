@@ -3,15 +3,27 @@
 }
 
 .header-box {
-  height: 5.833vw;
+  height: 5vw;
   box-shadow: 0 13px 13px -12px rgb(0 0 0 / 20%);
   background-color: #fff;
   margin-bottom: 15px;
+
+  @media only screen and (max-width: 768px) {
+    height: 10vw;
+
+    @media only screen and (max-width: 767px) { 
+      height: 13vw;
+    }
+  }
 
   a {
     color: #000;
     text-decoration: none;
   }
+}
+
+.home-pd {
+  margin: 1.5vw 1.04vw;
 }
 
 .reverse {
@@ -24,6 +36,14 @@
 
 .pd-20 {
   padding-right: 13%;
+
+  @media only screen and (max-width: 768px) {
+    padding-right: 6%;
+
+    @media only screen and (max-width: 767px) {
+       padding-right: 13%;
+    }
+  }
 }
 
 .search-box {
@@ -31,10 +51,30 @@
     text-decoration: none;
     color: #808080;
   }
+
+  .mg-15 {
+     margin-right: 5%;
+
+    @media only screen and (max-width: 768px) {
+      margin-right: 15%;
+
+      @media only screen and (max-width: 767px) {
+        margin-right: auto;
+      }
+    }
+  }
 }
 
 .pd {
   margin: 2.0vw 1.04vw;
+
+  @media only screen and (max-width: 768px) {
+    margin: 4.0vw 1.04vw;
+
+    @media only screen and (max-width: 767px) {
+      margin: 2.0vw 1.04vw;
+    }
+  }
 }
 
 .margin-tb {
@@ -102,9 +142,15 @@
 .logo {
   height: 1.67vw;
   margin-right: 3.68vw;
+  margin: 1.5vw 1.04vw;
 
-  @media only screen and (max-width: 768px) { 
-    height: 5vw;
+  @media only screen and (max-width: 768px) {
+    height: 4vw;
+    margin: 3vw 1.04vw;
+
+    @media only screen and (max-width: 767px) { 
+      height: 6vw;
+    }
   }
 }
 
@@ -119,7 +165,11 @@ h1 {
   margin-top: 0;
 
   @media only screen and (max-width: 768px) {
-    font-size: 24px;
+   font-size: 28px;
+
+    @media only screen and (max-width: 767px) { 
+      font-size: 24px;
+    }
   }
 }
 
@@ -165,12 +215,20 @@ input {
   background-size: 1.04vw;
   background-image: url(https://www.terrain.art/search@3x.bec00ab2491d1a1fd571.png);
 
-  @media only screen and (max-width: 768px) { 
+  @media only screen and (max-width: 768px) {
+    background-size: 2vw;
+    height: 3vw;
+    padding: 0.7vw 1.32vw 0.7vw 3vw;
+    border: none; 
+    border-bottom: .5vw solid #ededed;
+  }
+
+  @media only screen and (max-width: 767px) { 
     background-size: 5vw;
     height: 9vw;
     padding: 0.7vw 1.32vw 0.7vw 6vw;
     border: none; 
-    border-bottom: .7vw solid #ededed;
+    border-bottom: 2px solid #ededed;
   }
 }
 
