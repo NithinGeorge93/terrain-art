@@ -38,9 +38,9 @@
   padding-right: 13%;
 
   @media only screen and (max-width: 768px) {
-    padding-right: 6%;
+    padding-right: 0;
 
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 480px) {
        padding-right: 13%;
     }
   }
@@ -213,7 +213,7 @@ input {
   background-repeat: no-repeat;
   background-position-x: 1.04vw;
   background-size: 1.04vw;
-  background-image: url(https://www.terrain.art/search@3x.bec00ab2491d1a1fd571.png);
+  background-image: url(/assets/search.png);
 
   @media only screen and (max-width: 768px) {
     background-size: 2vw;
@@ -223,7 +223,7 @@ input {
     border-bottom: .5vw solid #ededed;
   }
 
-  @media only screen and (max-width: 767px) { 
+  @media only screen and (max-width: 480px) { 
     background-size: 5vw;
     height: 9vw;
     padding: 0.7vw 1.32vw 0.7vw 6vw;
